@@ -8,6 +8,9 @@ The objective of this project is to develop firmware for an ESP32-based
 embedded system that monitors environmental conditions and provides
 safety alerts.
 
+## Wokwi Simulation
+
+![Wokwi Simulation](screenshots/wokwi-test.png)
 ## Hardware
 - ESP32
 - DHT22
