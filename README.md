@@ -10,7 +10,7 @@ safety alerts.
 
 ## Wokwi Simulation
 
-![Wokwi Simulation](screenshots/wokwi-test.png)
+![Wokwi Simulation](screenshots/Capture.png)
 ## Hardware
 - ESP32
 - DHT22
