@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "author": "Shiv Datt",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 202.2, "left": -106.2, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -32.4, "left": 80.6, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -32.4,
+      "left": 51.8,
+      "attrs": { "color": "limegreen", "flip": "" }
+    },
+    { "type": "wokwi-led", "id": "led3", "top": -32.4, "left": 23, "attrs": { "color": "blue" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 40.8,
+      "left": -84.6,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 284.8,
+      "left": 360.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -105.3, "left": 234.6, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -82.4, "left": 127.02, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": 492.8,
+      "left": -66.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 72,
+      "left": 85.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 72,
+      "left": 18.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 72,
+      "left": 47.45,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.1", "dht1:GND", "black", [ "v-48", "h269.1" ] ],
+    [ "pir1:GND", "dht1:GND", "black", [ "v28.8", "h-0.26" ] ],
+    [ "led3:C", "uno:GND.1", "black", [ "v28.8", "h-28.4", "v0" ] ],
+    [ "led2:C", "uno:GND.1", "black", [ "v28.8", "h-57.2", "v9.6" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "v28.8", "h-28.4" ] ],
+    [ "r1:2", "uno:4", "green", [ "h0" ] ],
+    [ "r1:1", "led1:A", "green", [ "h0" ] ],
+    [ "r3:1", "led2:A", "green", [ "h0" ] ],
+    [ "r3:2", "uno:5", "green", [ "h0" ] ],
+    [ "led3:A", "r2:1", "green", [ "v0" ] ],
+    [ "r2:2", "uno:6", "green", [ "h0", "v27.6", "h48" ] ],
+    [ "uno:3", "pir1:OUT", "green", [ "v-96", "h13.6" ] ],
+    [ "uno:2", "dht1:SDA", "green", [ "v-86.4", "h42.5" ] ],
+    [ "ldr1:VCC", "uno:5V", "red", [ "h19.2", "v-57.6", "h-67.2" ] ],
+    [ "pir1:VCC", "dht1:VCC", "red", [ "v134.4", "h9.6" ] ],
+    [ "uno:5V", "dht1:VCC", "red", [ "v57.5", "h71" ] ],
+    [ "uno:7", "bz1:2", "green", [ "v-67.2", "h-121.2" ] ],
+    [ "uno:GND.1", "bz1:1", "black", [ "v-48", "h-57.3" ] ],
+    [ "uno:GND.1", "lcd1:GND", "black", [ "v-48", "h269.1", "v144" ] ],
+    [ "uno:5V", "lcd1:VCC", "red", [ "v57.5", "h195.8", "v-124.8" ] ],
+    [ "lcd1:SDA", "uno:A4", "green", [ "h-28.8", "v29", "h-201.6" ] ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-19.2", "v29.1", "h-201.6" ] ],
+    [ "uno:A0", "ldr1:AO", "green", [ "v38.3", "h32.6", "v105.6" ] ],
+    [ "uno:GND.1", "ldr1:GND", "black", [ "v-48", "h269.1", "v259.2" ] ]
+  ],
+  "dependencies": {}
+}
