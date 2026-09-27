@@ -11,7 +11,7 @@ safety alerts.
 ## Wokwi Simulation
 
 <p align="center">
-  <img src="screenshots/Capture.PNG" width="600">
+  <img src="Capture.PNG" width="600">
 </p>
 
 ## Hardware
